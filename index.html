@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhamad Rinjani Ramadan — Informatics Graduate experienced in warehouse digitalization, quality assurance, and cross-functional operations.">
+    <meta name="author" content="Muhamad Rinjani Ramadan">
+    <title>Rinjani Ramadan — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Rinjani <span class="logo-accent">Ramadan</span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#certifications" class="nav-link" data-i18n="nav.certifications">Certifications</a></li>
+                <li><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+                <li><a href="#contact" class="nav-link nav-link-cta" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="control-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <button class="control-btn lang-btn" id="langToggle" aria-label="Toggle language">
+                    <span id="langLabel">EN</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-greeting animate-on-scroll">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text" data-i18n="hero.greeting">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name animate-on-scroll">Muhamad Rinjani<br><span class="name-highlight">Ramadan</span></h1>
+                <p class="hero-roles animate-on-scroll" data-i18n="hero.profileRole">
+                    Informatics Graduate
+                </p>
+                <p class="hero-tagline animate-on-scroll" data-i18n="hero.tagline">
+                    An Informatics graduate optimizing physical operations through digital systems, specializing in warehouse digitalization, quality control, and process engineering.
+                </p>
+                <div class="hero-cta animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> <span data-i18n="hero.cta1">View Projects</span></a>
+                    <div class="cv-dropdown" id="cvDropdownContainer">
+                        <button class="btn btn-secondary dropdown-trigger" id="cvDropdownBtn">
+                            <i class="fas fa-file-alt"></i> <span data-i18n="hero.ctaCV">Curriculum Vitae</span> <i class="fas fa-chevron-down arrow-icon"></i>
+                        </button>
+                        <div class="dropdown-menu" id="cvDropdownMenu">
+                            <a href="CV_Muhamad_Rinjani_Ramadan_EN.pdf" target="_blank" rel="noopener noreferrer" class="dropdown-item" id="cvLinkEn">
+                                <i class="fas fa-flag-usa"></i> <span data-i18n="hero.cvEn">English Version</span>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="dropdown-item" id="cvLinkId">
+                                <i class="fas fa-flag"></i> <span data-i18n="hero.cvId">Indonesian Version</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span data-i18n="hero.cta2">Contact Me</span></a>
+                </div>
+            </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="hero-profile-card">
+                    <div class="profile-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/92910632?v=4" alt="Rinjani Ramadan" width="120" height="120">
+                    </div>
+                    <div class="profile-info">
+                        <h2>Rinjani Ramadan</h2>
+                        <p class="profile-role" data-i18n="hero.profileRole">Informatics Graduate</p>
+                    </div>
+                    <div class="profile-highlights">
+                        <div class="ph-item"><i class="fas fa-graduation-cap"></i><span data-i18n="hero.ph.gpa">GPA 3.38</span></div>
+                        <div class="ph-item"><i class="fas fa-language"></i><span>TOEFL 550</span></div>
+                        <div class="ph-item"><i class="fas fa-certificate"></i><span data-i18n="hero.ph.certified">BNSP Certified</span></div>
+                        <div class="ph-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="hero.ph.location">Bekasi, Indonesia</span></div>
+                    </div>
+                    <div class="profile-socials">
+                        <a href="https://github.com/rinjanirmdn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/rinjanirmdn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:rinjaniramadhan92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down"><div class="scroll-mouse"><div class="scroll-wheel"></div></div></a>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="about.tag">About Me</span>
+                <h2 class="section-title" data-i18n-html="about.title">Getting to Know<br><span class="text-gradient">Who I Am</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text animate-on-scroll">
+                    <p data-i18n="about.p1">Informatics graduate with practical experience spanning <strong>warehouse digitalization</strong>, <strong>software quality assurance</strong>, and operational roles in manufacturing and logistics. Experienced in functional testing, system validation, and technical documentation, with the ability to bridge technical and operational perspectives in a <strong>cross-functional environment</strong>.</p>
+                    <p data-i18n="about.p2">I thrive at the intersection of technology and operations — solving real-world problems, streamlining processes, and building systems that create tangible impact. Whether it's optimizing warehouse workflows, running a digital marketing campaign, or developing a full-stack application, I bring a hands-on, results-driven approach.</p>
+                </div>
+                <div class="about-stats animate-on-scroll">
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-graduation-cap"></i></div><div class="stat-value">3.38</div><div class="stat-label">GPA</div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-language"></i></div><div class="stat-value">550</div><div class="stat-label">TOEFL</div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-certificate"></i></div><div class="stat-value">BNSP</div><div class="stat-label" data-i18n="about.certified">Certified SE</div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-value">12+</div><div class="stat-label" data-i18n="about.certs">Certifications</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="exp.tag">Experience</span>
+                <h2 class="section-title" data-i18n-html="exp.title">Professional<br><span class="text-gradient">Journey</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge current" data-i18n="exp.current">Current</div>
+                        <h3 class="timeline-title" data-i18n="exp.job1.title">Intern - Warehouse Digitalization</h3>
+                        <div class="timeline-company"><i class="fas fa-building"></i> PT Oneject Indonesia</div>
+                        <div class="timeline-date" data-i18n="exp.job1.date"><i class="fas fa-calendar-alt"></i> Nov 2025 - May 2026</div>
+                        <p class="timeline-desc" data-i18n="exp.job1.desc">Contributing to warehouse digitalization initiatives including system development, functional testing (blackbox), system validation, and technical documentation for manufacturing operations.</p>
+                        <div class="timeline-tags"><span class="tag" data-i18n="tag.digitalization">Digitalization</span><span class="tag" data-i18n="tag.qaTesting">QA Testing</span><span class="tag" data-i18n="tag.sysValidation">System Validation</span><span class="tag" data-i18n="tag.documentation">Documentation</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-i18n="exp.job2.title">IT Support Intern</h3>
+                        <div class="timeline-company"><i class="fas fa-building"></i> PT Globalnine Indonesia</div>
+                        <div class="timeline-date" data-i18n="exp.job2.date"><i class="fas fa-calendar-alt"></i> Oct 2024 - Dec 2024</div>
+                        <p class="timeline-desc" data-i18n="exp.job2.desc">Provided technical support, hardware/software troubleshooting, and IT infrastructure maintenance in a corporate environment.</p>
+                        <div class="timeline-tags"><span class="tag" data-i18n="tag.itSupport">IT Support</span><span class="tag" data-i18n="tag.troubleshooting">Troubleshooting</span><span class="tag" data-i18n="tag.infrastructure">Infrastructure</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-i18n="exp.job3.title">Production Operator</h3>
+                        <div class="timeline-company"><i class="fas fa-building"></i> PT Dharma Controlcable Indonesia</div>
+                        <div class="timeline-date" data-i18n="exp.job3.date"><i class="fas fa-calendar-alt"></i> Aug 2022 - Apr 2023</div>
+                        <p class="timeline-desc" data-i18n="exp.job3.desc">Operated manufacturing production lines, ensuring quality standards and efficient output in automotive cable production.</p>
+                        <div class="timeline-tags"><span class="tag" data-i18n="tag.manufacturing">Manufacturing</span><span class="tag" data-i18n="tag.qualityControl">Quality Control</span><span class="tag" data-i18n="tag.production">Production</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-i18n="exp.job4.title">Admin & Warehouse Technician Intern</h3>
+                        <div class="timeline-company"><i class="fas fa-building"></i> PT Globalnine Indonesia</div>
+                        <div class="timeline-date" data-i18n="exp.job4.date"><i class="fas fa-calendar-alt"></i> Jan 2020 - Mar 2020</div>
+                        <p class="timeline-desc" data-i18n="exp.job4.desc">Managed warehouse administration, inventory tracking, and documentation processes in a logistics and distribution environment.</p>
+                        <div class="timeline-tags"><span class="tag" data-i18n="tag.administration">Administration</span><span class="tag" data-i18n="tag.warehouse">Warehouse</span><span class="tag" data-i18n="tag.inventory">Inventory</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="proj.tag">Projects</span>
+                <h2 class="section-title" data-i18n-html="proj.title">Featured<br><span class="text-gradient">Work</span></h2>
+            </div>
+            <div class="projects-grid">
+                <!-- e-DCS -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-ship"></i></div>
+                        <span class="project-number">#01</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj.edcs.title">e-Docking Control System (e-DCS)</h3>
+                    <p class="project-description" data-i18n="proj.edcs.desc">A comprehensive docking control system with real-time monitoring via WebSocket, built during the warehouse digitalization internship at PT Oneject Indonesia.</p>
+                    <div class="project-stack">
+                        <span class="stack-badge laravel">Laravel 11</span><span class="stack-badge postgresql">PostgreSQL</span><span class="stack-badge react">React</span><span class="stack-badge tailwind">TailwindCSS</span><span class="stack-badge websocket">WebSocket</span>
+                    </div>
+                    <div class="project-cta">
+                        <a href="https://github.com/rinjanirmdn/e--Docking-Control-System" target="_blank" rel="noopener noreferrer" class="project-link-btn" id="project-edcs-github"><i class="fab fa-github"></i> <span data-i18n="proj.viewGithub">View on GitHub</span></a>
+                    </div>
+                </div>
+                <!-- Warehouse QR -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-warehouse"></i></div>
+                        <span class="project-number">#02</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj.warehouse.title">Warehouse Management App + QR Code</h3>
+                    <p class="project-description" data-i18n="proj.warehouse.desc">Warehouse management system with QR code integration using Reed-Solomon error correction and SHA-256 hashing. Built as a thesis project for PT Globalnine Indonesia.</p>
+                    <div class="project-stack">
+                        <span class="stack-badge php">PHP</span><span class="stack-badge mysql">MySQL</span><span class="stack-badge javascript">JavaScript</span><span class="stack-badge crypto">Reed-Solomon</span><span class="stack-badge crypto">SHA-256</span>
+                    </div>
+                    <div class="project-cta">
+                        <a href="https://github.com/rinjanirmdn/APLIKASI-MANAJEMEN-GUDANG-BERBASIS-WEB-DENGAN-FITUR-QR-CODE-DENGAN-REED-SOLOMON-DAN-SHA-256" target="_blank" rel="noopener noreferrer" class="project-link-btn" id="project-warehouse-github"><i class="fab fa-github"></i> <span data-i18n="proj.viewGithub">View on GitHub</span></a>
+                    </div>
+                </div>
+                <!-- Mega Harmoni -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                        <span class="project-number">#03</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj.mega.title">Google Ads Campaign - Mega Harmoni Adventure</h3>
+                    <p class="project-description" data-i18n="proj.mega.desc">Digital marketing campaign achieving an exceptional 15.55% CTR, leveraging Google Tag Manager for precise analytics tracking and conversion optimization.</p>
+                    <div class="project-stack">
+                        <span class="stack-badge google">Google Ads</span><span class="stack-badge google">Google Tag Manager</span><span class="stack-badge metric">CTR 15.55%</span>
+                    </div>
+                    <div class="project-cta">
+                        <a href="https://drive.google.com/file/d/1MqsKLPLUtKPDumljYLYs3I16jxuS35C9/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-link-btn" id="project-mega-drive"><i class="fas fa-external-link-alt"></i> <span data-i18n="proj.viewReport">View Campaign Report</span></a>
+                    </div>
+                </div>
+                <!-- Bookshelf -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-book"></i></div>
+                        <span class="project-number">#04</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj.bookshelf.title">Bookshelf Application</h3>
+                    <p class="project-description" data-i18n="proj.bookshelf.desc">Interactive bookshelf application for managing personal book collections with full CRUD functionality, built with vanilla web technologies.</p>
+                    <div class="project-stack">
+                        <span class="stack-badge html">HTML</span><span class="stack-badge css">CSS</span><span class="stack-badge javascript">JavaScript</span>
+                    </div>
+                    <div class="project-cta">
+                        <a href="https://github.com/rinjanirmdn/Bookshelf-apps" target="_blank" rel="noopener noreferrer" class="project-link-btn" id="project-bookshelf-github"><i class="fab fa-github"></i> <span data-i18n="proj.viewGithub">View on GitHub</span></a>
+                    </div>
+                </div>
+                <!-- Halaman Profile -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-card-header">
+                        <div class="project-icon"><i class="fas fa-globe"></i></div>
+                        <span class="project-number">#05</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="proj.tambun.title">Halaman Profile - Tambun</h3>
+                    <p class="project-description" data-i18n="proj.tambun.desc">A regional profile page built as part of web development coursework at Dicoding, applying HTML and CSS fundamentals for layout and design.</p>
+                    <div class="project-stack">
+                        <span class="stack-badge html">HTML</span><span class="stack-badge css">CSS</span>
+                    </div>
+                    <div class="project-cta">
+                        <a href="https://github.com/rinjanirmdn/Halaman-Profile-Tambun" target="_blank" rel="noopener noreferrer" class="project-link-btn" id="project-tambun-github"><i class="fab fa-github"></i> <span data-i18n="proj.viewGithub">View on GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="skills.tag">Skills</span>
+                <h2 class="section-title" data-i18n-html="skills.title">Core<br><span class="text-gradient">Competencies</span></h2>
+            </div>
+            <div class="skills-grid animate-on-scroll">
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-laptop-code"></i> <span data-i18n="skills.technical">Technical</span></h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-php"></i><span>PHP & Laravel</span></div>
+                        <div class="skill-item"><i class="fab fa-js-square"></i><span>JavaScript & React</span></div>
+                        <div class="skill-item"><i class="fab fa-html5"></i><span>HTML, CSS, TailwindCSS</span></div>
+                        <div class="skill-item"><i class="fas fa-database"></i><span>MySQL & PostgreSQL</span></div>
+                        <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git Version Control</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-clipboard-check"></i> <span data-i18n="skills.operational">Operational & QA</span></h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fas fa-vial"></i><span>Blackbox Testing</span></div>
+                        <div class="skill-item"><i class="fas fa-project-diagram"></i><span>UML & System Design</span></div>
+                        <div class="skill-item"><i class="fas fa-file-alt"></i><span data-i18n="skills.techDoc">Technical Documentation</span></div>
+                        <div class="skill-item"><i class="fas fa-tasks"></i><span data-i18n="skills.processOpt">Process Optimization</span></div>
+                        <div class="skill-item"><i class="fas fa-qrcode"></i><span data-i18n="skills.warehouse">Warehouse Digitalization</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title"><i class="fas fa-chart-bar"></i> <span data-i18n="skills.professional">Professional</span></h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fas fa-ad"></i><span>Google Ads & Tag Manager</span></div>
+                        <div class="skill-item"><i class="fas fa-file-word"></i><span>Microsoft Office Suite</span></div>
+                        <div class="skill-item"><i class="fas fa-users"></i><span data-i18n="skills.crossFunc">Cross-Functional Teamwork</span></div>
+                        <div class="skill-item"><i class="fas fa-search"></i><span data-i18n="skills.research">Research & Analysis</span></div>
+                        <div class="skill-item"><i class="fas fa-comment-dots"></i><span data-i18n="skills.comm">English & Indonesian</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="cert.tag">Certifications</span>
+                <h2 class="section-title" data-i18n-html="cert.title">Credentials &amp;<br><span class="text-gradient">Achievements</span></h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card cert-featured animate-on-scroll">
+                    <div class="cert-badge-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="cert-info"><h3 class="cert-title">Junior Software Engineer</h3><p class="cert-issuer">BNSP — Badan Nasional Sertifikasi Profesi</p><span class="cert-year">2025</span></div>
+                    <div class="cert-featured-tag" data-i18n="cert.national">National Certification</div>
+                </div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon ibm"><i class="fas fa-cloud"></i></div><div class="cert-info"><h3 class="cert-title">Front-End Development with React</h3><p class="cert-issuer">IBM — Coursera</p></div></div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon ibm"><i class="fas fa-laptop-code"></i></div><div class="cert-info"><h3 class="cert-title">Application Development using Microservices and Serverless</h3><p class="cert-issuer">IBM — Coursera</p></div></div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon dicoding"><i class="fas fa-code"></i></div><div class="cert-info"><h3 class="cert-title" data-i18n="cert.dicoding1">Web Programming Fundamentals</h3><p class="cert-issuer">Dicoding Indonesia</p></div></div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon dicoding"><i class="fab fa-js"></i></div><div class="cert-info"><h3 class="cert-title" data-i18n="cert.dicoding2">JavaScript Programming Fundamentals</h3><p class="cert-issuer">Dicoding Indonesia</p></div></div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon dicoding"><i class="fas fa-book-open"></i></div><div class="cert-info"><h3 class="cert-title" data-i18n="cert.dicoding3">Front-End Web Development for Beginners</h3><p class="cert-issuer">Dicoding Indonesia</p></div></div>
+                <div class="cert-card animate-on-scroll"><div class="cert-badge-icon cisco"><i class="fas fa-network-wired"></i></div><div class="cert-info"><h3 class="cert-title" data-i18n="cert.cisco">Networking & Cybersecurity</h3><p class="cert-issuer">Cisco Networking Academy</p></div></div>
+                <div class="cert-summary animate-on-scroll"><div class="cert-summary-number">12+</div><p data-i18n="cert.summary">Professional certifications across software engineering, cloud computing, web development, and networking.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="edu.tag">Education</span>
+                <h2 class="section-title" data-i18n-html="edu.title">Academic<br><span class="text-gradient">Background</span></h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card animate-on-scroll">
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <div class="edu-details">
+                        <h3 class="edu-degree" data-i18n="edu.degree1">Sarjana Komputer (S.Kom.)</h3>
+                        <p class="edu-school">Universitas Bhayangkara Jakarta Raya</p>
+                        <p class="edu-major" data-i18n="edu.major1">Informatics</p>
+                        <div class="edu-meta"><span><i class="fas fa-calendar-alt"></i> 2021 - 2025</span><span><i class="fas fa-star"></i> GPA: 3.38 / 4.00</span></div>
+                    </div>
+                </div>
+                <div class="edu-card animate-on-scroll">
+                    <div class="edu-icon secondary"><i class="fas fa-school"></i></div>
+                    <div class="edu-details">
+                        <h3 class="edu-degree" data-i18n="edu.degree2">Vocational High School</h3>
+                        <p class="edu-school">SMK Karya Bangsa</p>
+                        <p class="edu-major" data-i18n="edu.major2">Light Vehicle Engineering (Automotive)</p>
+                        <div class="edu-meta"><span><i class="fas fa-calendar-alt"></i> 2018 - 2021</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="contact.tag">Contact</span>
+                <h2 class="section-title" data-i18n-html="contact.title">Let's Work<br><span class="text-gradient">Together</span></h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Have a project in mind or want to discuss opportunities? Feel free to reach out.</p>
+            </div>
+            <div class="contact-grid animate-on-scroll">
+                <a href="mailto:rinjaniramadhan92@gmail.com" class="contact-card" id="contact-email"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>Email</h3><p>rinjaniramadhan92@gmail.com</p></a>
+                <a href="https://linkedin.com/in/rinjanirmdn" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-linkedin"><div class="contact-icon linkedin"><i class="fab fa-linkedin-in"></i></div><h3>LinkedIn</h3><p>linkedin.com/in/rinjanirmdn</p></a>
+                <a href="https://github.com/rinjanirmdn" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-github"><div class="contact-icon github"><i class="fab fa-github"></i></div><h3>GitHub</h3><p>github.com/rinjanirmdn</p></a>
+                <div class="contact-card" id="contact-location"><div class="contact-icon location"><i class="fas fa-map-marker-alt"></i></div><h3 data-i18n="contact.location">Location</h3><p>Bekasi, West Java, Indonesia</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Rinjani <span class="logo-accent">Ramadan</span></div>
+                <p class="footer-text">Designed & Built by Rinjani Ramadan &copy; 2025</p>
+                <div class="footer-socials">
+                    <a href="mailto:rinjaniramadhan92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/rinjanirmdn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/rinjanirmdn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
