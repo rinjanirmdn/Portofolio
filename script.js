@@ -92,6 +92,8 @@
             'cert.dicoding3': 'Front-End Web Development for Beginners',
             'cert.cisco': 'Networking & Cybersecurity',
             'cert.summary': 'Professional certifications across software engineering, cloud computing, web development, and networking.',
+            'cert.showAll': 'Show All',
+            'cert.showLess': 'Show Less',
             // Education
             'edu.tag': 'Education',
             'edu.degree1': 'Bachelor of Computer Science',
@@ -192,6 +194,8 @@
             'cert.dicoding3': 'Pengembangan Web Front-End untuk Pemula',
             'cert.cisco': 'Jaringan & Keamanan Siber',
             'cert.summary': 'Sertifikasi profesional di bidang rekayasa perangkat lunak, cloud computing, pengembangan web, dan jaringan.',
+            'cert.showAll': 'Tampilkan Semua',
+            'cert.showLess': 'Tampilkan Lebih Sedikit',
             // Education
             'edu.tag': 'Pendidikan',
             'edu.degree1': 'Sarjana Komputer (S.Kom.)',
@@ -242,6 +246,17 @@
                 el.innerHTML = translations[lang][key];
             }
         });
+
+        // Update show all button text based on state
+        const certExtraWrapper = document.getElementById('certExtraWrapper');
+        const toggleCertsText = document.getElementById('toggleCertsText');
+        if (certExtraWrapper && toggleCertsText) {
+            const isHidden = certExtraWrapper.classList.contains('hidden');
+            const key = isHidden ? 'cert.showAll' : 'cert.showLess';
+            if (translations[lang] && translations[lang][key]) {
+                toggleCertsText.textContent = translations[lang][key];
+            }
+        }
 
         // HTML translations (section titles)
         document.querySelectorAll('[data-i18n-html]').forEach(el => {
@@ -378,6 +393,25 @@
         document.addEventListener('click', (e) => {
             if (!cvDropdownContainer.contains(e.target)) {
                 cvDropdownContainer.classList.remove('active');
+            }
+        });
+    }
+
+    /* ===== CERTIFICATIONS SHOW ALL TOGGLE ===== */
+    const toggleCertsBtn = document.getElementById('toggleCertsBtn');
+    const certExtraWrapper = document.getElementById('certExtraWrapper');
+    const toggleCertsText = document.getElementById('toggleCertsText');
+    const toggleCertsIcon = document.getElementById('toggleCertsIcon');
+
+    if (toggleCertsBtn && certExtraWrapper && toggleCertsText && toggleCertsIcon) {
+        toggleCertsBtn.addEventListener('click', () => {
+            const isHidden = certExtraWrapper.classList.toggle('hidden');
+            toggleCertsIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+            
+            // Set text content
+            const key = isHidden ? 'cert.showAll' : 'cert.showLess';
+            if (translations[currentLang] && translations[currentLang][key]) {
+                toggleCertsText.textContent = translations[currentLang][key];
             }
         });
     }
