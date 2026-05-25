@@ -91,7 +91,7 @@
             'cert.dicoding2': 'JavaScript Programming Fundamentals',
             'cert.dicoding3': 'Front-End Web Development for Beginners',
             'cert.cisco': 'Networking & Cybersecurity',
-            'cert.summary': 'Professional certifications across software engineering, cloud computing, web development, and networking.',
+            'cert.summary': 'Professional certifications across software engineering, data science, cybersecurity, and cloud computing.',
             'cert.showAll': 'Show All',
             'cert.showLess': 'Show Less',
             // Education
@@ -193,7 +193,7 @@
             'cert.dicoding2': 'Dasar Pemrograman JavaScript',
             'cert.dicoding3': 'Pengembangan Web Front-End untuk Pemula',
             'cert.cisco': 'Jaringan & Keamanan Siber',
-            'cert.summary': 'Sertifikasi profesional di bidang rekayasa perangkat lunak, cloud computing, pengembangan web, dan jaringan.',
+            'cert.summary': 'Sertifikasi profesional di bidang software engineering, data science, cybersecurity, dan cloud computing.',
             'cert.showAll': 'Tampilkan Semua',
             'cert.showLess': 'Tampilkan Lebih Sedikit',
             // Education
