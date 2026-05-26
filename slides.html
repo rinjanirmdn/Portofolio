@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinjani Ramadan — Portfolio Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent-primary: #2563eb;
+            --accent-secondary: #4f46e5;
+            --accent-gradient: linear-gradient(135deg, #2563eb, #4f46e5);
+            --accent-glow: rgba(37, 99, 235, 0.05);
+            --border-color: rgba(15, 23, 42, 0.06);
+            --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #cbd5e1;
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Presentation Container */
+        .presentation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        /* Slide Core Layout */
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            position: relative;
+            overflow: hidden;
+            padding: 90px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Visual Patterns */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Slide Header & Footer */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .sh-logo {
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .sh-logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sh-meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Slide Content wrapper */
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Standard Typography */
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .slide-title span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Specific layouts */
+
+        /* Slide 1: Cover */
+        .slide-cover {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        }
+
+        .cover-tag {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            background: var(--accent-glow);
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            display: inline-block;
+        }
+
+        .cover-title {
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .cover-role {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .cover-desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .cover-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Slide 2: About Me */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .about-desc p {
+            margin-bottom: 16px;
+        }
+
+        .about-desc p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-icon {
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-val {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .stat-lbl {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Slide 3: Experience */
+        .exp-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .exp-timeline::before {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .exp-item {
+            position: relative;
+        }
+
+        .exp-marker {
+            position: absolute;
+            left: -30px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 4px solid var(--accent-primary);
+            z-index: 2;
+        }
+
+        .exp-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .exp-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-company {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .exp-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 & 5: Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .project-detail-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .project-feature {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .pf-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: var(--accent-glow);
+            color: var(--accent-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .pf-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .pf-text p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .project-visual {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pv-mock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .pv-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            background: var(--accent-glow);
+            color: var(--accent-primary);
+            border-radius: 4px;
+        }
+
+        .pv-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 20px;
+        }
+
+        .tech-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Slide 6: Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skills-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sc-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .sc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .sc-item i {
+            color: var(--text-secondary);
+            width: 14px;
+            text-align: center;
+        }
+
+        /* Slide 7: Certifications */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .cert-slide-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            padding: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cert-icon-box {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .cert-details h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+
+        .cert-details p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-note {
+            grid-column: span 2;
+            text-align: center;
+            padding: 14px;
+            background: var(--accent-glow);
+            border: 1px dashed rgba(37, 99, 235, 0.2);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        /* Slide 8: CTA */
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            box-shadow: var(--card-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-headline {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .cta-headline span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .cta-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cta-item i {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+            }
+            .presentation {
+                gap: 0;
+                padding: 0;
+            }
+            .slide {
+                border: none;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        
+        <!-- Slide 1: Cover -->
+        <div class="slide slide-cover">
+            <div class="cover-tag">Portfolio Slide Deck</div>
+            <h1 class="cover-title">Muhamad Rinjani<br>Ramadan</h1>
+            <div class="cover-role">Informatics Graduate</div>
+            <p class="cover-desc">Optimizing physical operations through digital systems, specializing in warehouse digitalization, software quality control, and process engineering.</p>
+            <div class="cover-cta">
+                <span>Swipe to continue</span>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <!-- Slide 2: About Me -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">About Me</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">Driving Efficiency Through <span>Technology</span></h2>
+                <div class="about-grid">
+                    <div class="about-desc">
+                        <p>I am an Informatics graduate with practical experience spanning <strong>warehouse digitalization</strong>, <strong>software quality assurance</strong>, and manufacturing operations.</p>
+                        <p>I thrive at the intersection of technology and operations — solving real-world operational problems, streamlining workflows, and building digital tools that create tangible business value.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <i class="fas fa-graduation-cap stat-icon"></i>
+                            <div class="stat-val">3.38</div>
+                            <div class="stat-lbl">GPA / IPK</div>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-language stat-icon"></i>
+                            <div class="stat-val">550</div>
+                            <div class="stat-lbl">TOEFL Score</div>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-certificate stat-icon"></i>
+                            <div class="stat-val">BNSP</div>
+                            <div class="stat-lbl">Certified SE</div>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-award stat-icon"></i>
+                            <div class="stat-val">11</div>
+                            <div class="stat-lbl">Credentials</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 2 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Experience -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Professional Journey</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">My Professional <span>Timeline</span></h2>
+                <div class="exp-timeline">
+                    <div class="exp-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Intern - Warehouse Digitalization</div>
+                                    <div class="exp-company">PT Oneject Indonesia</div>
+                                </div>
+                                <div class="exp-date">Nov 2025 - May 2026</div>
+                            </div>
+                            <p class="exp-desc">Contributed to warehouse digitalization initiatives including system development, functional testing (blackbox), validation, and documentation for manufacturing operations.</p>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">IT Support Intern</div>
+                                    <div class="exp-company">PT Globalnine Indonesia</div>
+                                </div>
+                                <div class="exp-date">Oct 2024 - Dec 2024</div>
+                            </div>
+                            <p class="exp-desc">Provided hardware/software troubleshooting, technical user support, and IT infrastructure maintenance in a corporate logistics environment.</p>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Production Operator</div>
+                                    <div class="exp-company">PT Dharma Controlcable Indonesia</div>
+                                </div>
+                                <div class="exp-date">Aug 2022 - Apr 2023</div>
+                            </div>
+                            <p class="exp-desc">Operated manufacturing production lines, ensuring high quality control standards in automotive control cable manufacturing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 3 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: e-DCS Project -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Featured Project</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">e-Docking Control System <span>(e-DCS)</span></h2>
+                <p class="slide-subtitle">Warehouse Digitalization Internship @ PT Oneject Indonesia</p>
+                <div class="project-grid">
+                    <div class="project-detail-box">
+                        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;">A comprehensive docking control system designed to streamline warehouse loading and unloading queue management.</p>
+                        <div class="project-feature">
+                            <div class="pf-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="pf-text">
+                                <h4>Real-Time Monitoring</h4>
+                                <p>WebSocket-based dashboard displays vehicle docking queues and statuses dynamically without reload.</p>
+                            </div>
+                        </div>
+                        <div class="project-feature">
+                            <div class="pf-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="pf-text">
+                                <h4>Comprehensive QA Testing</h4>
+                                <p>Led functional testing (blackbox) and validation to ensure seamless operational integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div>
+                            <div class="pv-mock-header">
+                                <span style="font-weight: 700; font-size: 0.85rem;"><i class="fas fa-desktop"></i> Dashboard View</span>
+                                <span class="pv-badge">Live System</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Designed to bridge technology and operational workflows on the warehouse floor, giving team members immediate visibility into logistics queues.</p>
+                        </div>
+                        <div class="pv-tech-stack">
+                            <span class="tech-badge">Laravel 11</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">WebSocket</span>
+                            <span class="tech-badge">TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 4 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Warehouse QR Project -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Featured Project</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">Warehouse App + <span>QR Code</span></h2>
+                <p class="slide-subtitle">Academic Thesis Project @ PT Globalnine Indonesia</p>
+                <div class="project-grid">
+                    <div class="project-detail-box">
+                        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;">An integrated web application designed to track and control inventory in real-time using secure QR Code labeling.</p>
+                        <div class="project-feature">
+                            <div class="pf-icon"><i class="fas fa-qrcode"></i></div>
+                            <div class="pf-text">
+                                <h4>Custom QR Generation</h4>
+                                <p>Generates high-reliability QR code labels using Reed-Solomon error correction for high scanning durability.</p>
+                            </div>
+                        </div>
+                        <div class="project-feature">
+                            <div class="pf-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="pf-text">
+                                <h4>SHA-256 Hashing</h4>
+                                <p>Ensures robust data integrity and validation for scanning inputs, preventing barcode cloning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div>
+                            <div class="pv-mock-header">
+                                <span style="font-weight: 700; font-size: 0.85rem;"><i class="fas fa-mobile-screen"></i> Scanning System</span>
+                                <span class="pv-badge">Thesis Project</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Successfully mapped item tracking states and inventory levels, reducing manual administration times and errors in cargo records.</p>
+                        </div>
+                        <div class="pv-tech-stack">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Reed-Solomon</span>
+                            <span class="tech-badge">SHA-256</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 5 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Skills -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Competencies</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">Core <span>Competencies</span></h2>
+                <div class="skills-container">
+                    <div class="skills-card">
+                        <div class="sc-title">Technical</div>
+                        <div class="sc-list">
+                            <div class="sc-item"><i class="fab fa-php"></i> PHP &amp; Laravel 11</div>
+                            <div class="sc-item"><i class="fab fa-js-square"></i> JavaScript &amp; React</div>
+                            <div class="sc-item"><i class="fab fa-html5"></i> HTML5, CSS &amp; Tailwind</div>
+                            <div class="sc-item"><i class="fas fa-database"></i> MySQL &amp; PostgreSQL</div>
+                            <div class="sc-item"><i class="fab fa-git-alt"></i> Git Version Control</div>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <div class="sc-title">Operational &amp; QA</div>
+                        <div class="sc-list">
+                            <div class="sc-item"><i class="fas fa-vial"></i> Blackbox testing</div>
+                            <div class="sc-item"><i class="fas fa-project-diagram"></i> UML &amp; System Design</div>
+                            <div class="sc-item"><i class="fas fa-file-alt"></i> Technical Doc</div>
+                            <div class="sc-item"><i class="fas fa-tasks"></i> Process Optimization</div>
+                            <div class="sc-item"><i class="fas fa-qrcode"></i> Warehouse Digitalization</div>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <div class="sc-title">Professional</div>
+                        <div class="sc-list">
+                            <div class="sc-item"><i class="fas fa-ad"></i> Google Ads &amp; GTM</div>
+                            <div class="sc-item"><i class="fas fa-file-word"></i> MS Office Suite</div>
+                            <div class="sc-item"><i class="fas fa-users"></i> Cross-Functional Work</div>
+                            <div class="sc-item"><i class="fas fa-search"></i> Research &amp; Analysis</div>
+                            <div class="sc-item"><i class="fas fa-comment-dots"></i> Bilingual (EN/ID)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 6 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Certifications -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Credentials</div>
+            </div>
+            <div class="slide-body">
+                <h2 class="slide-title">Professional <span>Certifications</span></h2>
+                <div class="certs-grid">
+                    <div class="cert-slide-card">
+                        <div class="cert-icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <div class="cert-details">
+                            <h4>Software Engineer</h4>
+                            <p>BNSP &bull; Issued Sep 2025</p>
+                            <p style="font-family: monospace; font-size: 0.65rem; color: var(--text-muted);">ID: 62090 2512 6 5765 2025</p>
+                        </div>
+                    </div>
+                    <div class="cert-slide-card">
+                        <div class="cert-icon-box"><i class="fas fa-database"></i></div>
+                        <div class="cert-details">
+                            <h4>Data Science Intermediate</h4>
+                            <p>Coding Studio &bull; Issued Jun 2024</p>
+                            <p style="font-family: monospace; font-size: 0.65rem; color: var(--text-muted);">ID: 75B59417D2-75B58413CE-75AF13CFF5</p>
+                        </div>
+                    </div>
+                    <div class="cert-slide-card">
+                        <div class="cert-icon-box"><i class="fab fa-python"></i></div>
+                        <div class="cert-details">
+                            <h4>Python for Data Science</h4>
+                            <p>IBM &bull; Issued Jan 2024</p>
+                        </div>
+                    </div>
+                    <div class="cert-slide-card">
+                        <div class="cert-icon-box"><i class="fas fa-code"></i></div>
+                        <div class="cert-details">
+                            <h4>Code Gen &amp; Optimization</h4>
+                            <p>IBM &bull; Issued Aug 2025</p>
+                        </div>
+                    </div>
+                    <div class="cert-note">
+                        <i class="fas fa-award"></i> Holds 7 additional professional credentials from Cisco &amp; Dicoding Indonesia
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>rinjanirmdn.github.io/Portofolio/</div>
+                <div>Slide 7 of 8</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: CTA -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="sh-logo">Rinjani <span>Ramadan</span></div>
+                <div class="sh-meta">Get In Touch</div>
+            </div>
+            <div class="slide-body">
+                <div class="cta-box">
+                    <h2 class="cta-headline">Let's <span>Work Together</span></h2>
+                    <p class="cta-desc">Open to roles in Software Engineering, Quality Assurance, IT Support, or Warehouse Operations. Let's discuss how I can help streamline your digital systems.</p>
+                    <div class="cta-links">
+                        <a href="mailto:rinjaniramadhan92@gmail.com" class="cta-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>rinjaniramadhan92@gmail.com</div>
+                        </a>
+                        <a href="https://linkedin.com/in/rinjanirmdn" target="_blank" rel="noopener" class="cta-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>linkedin.com/in/rinjanirmdn</div>
+                        </a>
+                        <a href="https://github.com/rinjanirmdn" target="_blank" rel="noopener" class="cta-item">
+                            <i class="fab fa-github"></i>
+                            <div>github.com/rinjanirmdn</div>
+                        </a>
+                        <a href="https://rinjanirmdn.github.io/Portofolio/" target="_blank" rel="noopener" class="cta-item">
+                            <i class="fas fa-globe"></i>
+                            <div>rinjanirmdn.github.io/Portofolio/</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Thank You!</div>
+                <div>Slide 8 of 8</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
