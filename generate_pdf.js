@@ -36,7 +36,7 @@ const path = require('path');
         // Print to PDF with exact 1080x1080px page size
         await page.pdf({
             path: outputPath,
-            width: '1080px',
+            width: '1920px',
             height: '1080px',
             printBackground: true,
             margin: {
